@@ -8,4 +8,4 @@ def index(request):
 
 def group_posts(request, slug):
     return HttpResponse(f'Привет, я страница группы или что-то такое {slug}')
-    pass
+    
