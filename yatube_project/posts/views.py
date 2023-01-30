@@ -1,7 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-# from django.http import HttpResponse
-# from django.template import loader
-# from django.http import Http404
 from .models import Post, Group
 
 
@@ -16,7 +13,7 @@ def index(request):
 
 
 def group_posts(request, slug):
-    title = (f'Здесь будет информация о группах проекта Yatube {slug}')
+    title = (f'Записи сообщества {slug}')
     group = get_object_or_404(Group, slug=slug)
     posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
     context = {
